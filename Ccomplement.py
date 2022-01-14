@@ -8,6 +8,22 @@ Define a function reversecomplement that takes a DNA string as an input.
 For example,
 reversecomplement("AAGCT") should return "AGCTT".
 """
+from Antcheck import isDNA
 
 def reversecomplement(dna):
-  pass  # delete this line when you start writing your code
+  if isDNA(dna) == False:
+    return "error"
+  else:
+    reverse = dna[::-1]
+    revcompl = ""
+    for nt in reverse:
+      if nt == "A":
+        revcompl += "T"
+      elif nt == "T":
+        revcompl += "A"
+      elif nt == "C":
+        revcompl += "G"
+      elif nt == "G":
+        revcompl += "C"
+    return revcompl
+    
